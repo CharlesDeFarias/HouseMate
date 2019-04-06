@@ -53,6 +53,8 @@ module.exports = function(app, passport, db) {
       })
     });
 
+    //Main portal after logging in
+
     // LOGOUT ==============================
     app.get('/logout', function(req, res) {
         req.logout();

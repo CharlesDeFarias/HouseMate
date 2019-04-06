@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>House Portal</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li>User's photo, linked to public profile page</li>
+          <li>link to house page</li>
+          <li>link to profile.ejs</li>
+        </ul>
+      </nav>
+    </header>
+    <h2>House Portal</h2>
+    <section class="top bills main">
+      <h3>Upcoming Bills</h3>
+      <ul>
+        <li>Bills collection loaded here, showing all bills associated with the house for the month. Fields shown: bill link, user in charge, amount left (client-side javascript subtracting current amount property from total amount property from bills collection document), users not yet fully paid, days left, button to make a payment(actually also links to bill's page)</li>
+      </ul>
+    </section>
+
+    <section class="bottom debts main">
+      <h3>What you owe others</h3>
+      <ul>
+        <!-- for loop here -->
+        <!-- <li>transactions collection here, specifically loading the ones where the user owes somebody </li> -->
+      </ul>
+      <!-- end loop here -->
+    </section>
+
+    <section class="bottom owed main">
+      <h3>What others owe you</h3>
+      <ul>
+        <!-- for loop here -->
+        <!-- <li>transactions collection here, specifically loading the ones where the user is owed</li> -->
+      </ul>
+      <!-- end loop here -->
+    </section>
+
+
+  </body>
+</html>
