@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+    <title>21 Savage Fan Site</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <section class="acctDetails">
+      <ul class="profInfoList">
+        <!-- This list will be preloaded, using details from the user document from the collection to load all these values. Each one of these list items has a little pencil Icon at the end that upon clicking allows you to edit that particular field, triggering a put request to update the targetted field in the user document in the user collection -->
+        <li><span>Email:</span><input type="text" name="pEmail" value=""><i></i></li>
+        <li><span>Phone:</span><input type="text" name="pPhone" value=""><i></i></li>
+        <li><span>Paypal:</span><input type="text" name="pPaypal" value=""><i></i></li>
+        <li><span>Venmo:</span><input type="text" name="pVenmo" value=""><i></i></li>
+        <li><span>Cashapp:</span><input type="text" name="pCashapp" value=""><i></i></li>
+        <li><span>House:</span><input type="text" name="pHouse" value=""><i></i></li>
+        <li><span>Profile:</span><input type="text" name="pProfile" value=""><i></i></li>
+      </ul>
+    </section>
+    <div class="bottomHalf">
+        <section class="chargedBills">
+          <h2>Bills in charge of</h2>
+          <ul>
+            <li>Documents in the bill collection tied to the user loaded in each li</li>
+          </ul>
+        </section>
+        <section class="currentDebts">
+          <h2>Current Debts</h2>
+          <ul>
+            <li>Documents in the transactions collection tied to the user and not yet paid by the user go here. Fields will be: user owed (or  bill name)| amount owed | date of debt | due date | link to bill/transaction </li>
+          </ul>
+        </section>
+        <section class="recentTrans">
+          <h2>Recent Transactions</h2>
+          <ul>
+            <li>Documents in the transactions collection tied to the user, both paid and unpaid and inbound/outbound, go here. Fields will be: user that isn't current user | Payment or Owed | Date of transaction | Amount</li>
+          </ul>
+        </section>
+        <section class="currentOwed">
+          <h2>Currently Owed</h2>
+          <ul>
+            <li>Transactions paying the user that have not yet been paid will be loaded here. Displayed fields will be: user that owes this user | amount owed | date of transaction | date due | link to transaction page | button to send the person a reminder notification.</li>
+          </ul>
+        </section>
+    </div>
+
+</div>
+</body>
+</html>
