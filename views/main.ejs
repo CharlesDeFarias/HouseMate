@@ -8,8 +8,8 @@
     <header>
       <nav>
         <ul>
-          <li>User's photo, linked to public profile page</li>
-          <li>link to house page</li>
+          <li><a href="/profile/<%= user.local.email %>"><img src="/img/<%= user.local.photo %>"></a>User's photo, linked to public profile page</li>
+          <li><a href="/house/<%= user.local.house %>"></a></li>
           <li>link to profile.ejs</li>
         </ul>
       </nav>
@@ -18,7 +18,16 @@
     <section class="top bills main">
       <h3>Upcoming Bills</h3>
       <ul>
-        <li>Bills collection loaded here, showing all bills associated with the house for the month. Fields shown: bill link, user in charge, amount left (client-side javascript subtracting current amount property from total amount property from bills collection document), users not yet fully paid, days left, button to make a payment(actually also links to bill's page)</li>
+        <!-- Bills collection loaded here, showing all bills associated with the house for the month. Fields shown: bill link, user in charge, amount left (client-side javascript subtracting current amount property from total amount property from bills collection document), users not yet fully paid, days left, button to make a payment(actually also links to bill's page) -->
+        <% for(var i = 0; i < bills.length; i++) { %>
+        <li>
+          <a href="LINK TO INDIVIDUAL BILL PAGE HERE. RENDER BILL.EJS">
+        <span><%= bills[i].owedTo %></span>
+        <span><%= bills[i].amount %></span>
+        <span><%= bills[i].dueDate %></span>
+        <span><%= bills[i].careTaker %></span></li>
+        </a>
+        <% } %>
       </ul>
     </section>
     <section class="middle discussion main">
@@ -27,10 +36,19 @@
       </ul>
     </section>
     <section class="bottom debts main">
-      <h3>What you owe others</h3>
+      <h3>What you owe</h3>
       <ul>
-        <!-- for loop here -->
+        <!-- gotta find out how to load only the ones where the user owes somebody/something -->
+        <% for(var i = 0; i < transactions.length; i++) { %>
+          <% if(transactions[i]. )
+          <li>
+            <!-- in case of a bill between people, owedTo becomes user ID -->
+            <span><%= transactions[i].owedTo %></span>
+            <span><%= transactions[i].amount %></span>
+            <span><%= transactions[i].dueDate %></span>
+          </li>
         <!-- <li>transactions collection here, specifically loading the ones where the user owes somebody </li> -->
+        <% } %>
       </ul>
       <!-- end loop here -->
     </section>
