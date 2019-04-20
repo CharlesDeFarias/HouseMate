@@ -8,16 +8,16 @@ var userSchema = mongoose.Schema({
     local            : {
         email        : String,
         password     : String,
-        name         : String,
-        house        : String,
+        name         : String
+        // house        : String,
         // paypal       : String,
         // cashapp      : String,
-        profile      : String,
-        bills        : [],
-        transactions : [],
-        notes        : [],
-        photo        : String,
-        documents    : []
+        // profile      : String,
+        // bills        : [],
+        // transactions : [],
+        // notes        : [],
+        // photo        : String,
+        // documents    : []
     },
     facebook         : {
         id           : String,

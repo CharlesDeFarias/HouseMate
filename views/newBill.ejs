@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>New Bill</title>
+    <p>Create a new bill here</p>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="newBill body">
+    <form class="" action="/newBill" method="post">
+      <h3>What do you want to call this bill?</h3>
+      <input type="text" id="billName" name="billName" value="" placeholder="ex: internet, rent, new sofa">
+      <h3>Bill description: </h3>
+      <input type="text" id="billDesc" name="billDesc" value="" placeholder="Description (optional)">
+      <!-- houseId input will likely need removing at some point -->
+      <!-- <h3> House ID</h3>
+      <input type="text" id="houseId" name="houseId" value="" placeholder="Enter House ID"> -->
+      <h3>Total amount due:</h3>
+      <input type="text" id="billAmount" name="billAmount" value="" placeholder="Total amount due">
+      <h3>Number of people paying this bill</h3>
+      <input type="text" id="numPeople" name="numPeople" value="" placeholder="How many people are paying?">
+       <input type="submit" id="newBillBtn" name="newBillBtn">
+    </form>
+    <!-- on submit redirect to bill page that's being created -->
+    <!-- send form on enter -->
+    <!-- Have prompt confirm user is ready to submit bill -->
+    <!-- add descriptions to each field -->
+    <!-- assign specific amount of money to specific users. -->
+    have form send on enter as well as clicky
+
+
+    <script src="main.js" charset="utf-8"></script>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title><%= bill[0].name.toUpperCase() %> BILL PAGE</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="body bill">
+  <h1><%= bill[0].name.toUpperCase() %> BILL PAGE</h1>
+<!-- Bill information -->
+  <section class="bill right">
+    <section class="bill amount">
+      <h3>Id:</h3>
+      <span id="billId"><%= bill[0]._id %></span>
+      <h3>Amount Left:</h3>
+      <span id="amountLeft"><%= bill[0].amountLeft %></span>
+      <h3>Original Amount:</h3>
+      <span id="amountOriginal"><%= bill[0].amountOriginal %></span>
+      <h3>Number of people on bill:</h3>
+      <span id="numPeople"><%= bill[0].numPeople %></span>
+      <input type="button" id="payBill" name="payBill" value="Pay Now">
+    </section>
+
+    <section class="bill paid">
+      <h3>Housemates that have paid</h3>
+      <ul>
+        <% for(var i = 0; i < bill[0].peoplePaid.length; i++) { %>
+        <li>
+            <span><%= bill[0].peoplePaid[i] %> </span>
+          </li>
+          <% }%>
+        </ul>
+      </section>
+      <!-- Use userlist and people paid to generate list of people that haven't paid yet? -->
+      <!-- <section class="bill unpaid">
+        <h3>Housemates that have not paid</h3>
+        <ul>
+          <% for(var j = 0; j < bill[0].peoplePaid.length; j++) { %>
+            <li>
+              <span><%= bill[0].peoplePaid[j] %> </span>
+            </li>
+            <% } %>
+          </ul>
+        </section> -->
+
+        <section>
+        <input type="button" id="payBill" name="payBill" value="Pay Now">
+          <!-- <form class="" action="index.html" method="post">
+          Give user option to add in description, document/file and custom amount
+        </form> -->
+      </section>
+    </section>
+    <!-- have javascript promp appear on clicking pay to click again and confirm payment or decline. -->
+    <!-- Show users not paid -->
+    <script src="main.js"></script>
+  </body>
+  </html>

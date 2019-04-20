@@ -1,7 +1,59 @@
-body{
+.landing.body{
   padding-top:80px;
   word-wrap:break-word;
+  width: 75%;
+  margin: auto;
 }
-img{
+.landing img{
   height: 200px;
 }
+.landing.form{
+  width: 48%;
+  float: left;
+}
+.landing h1{
+  width: 100%;
+}
+.landing ul{
+  list-style: none;
+}
+.landing nav li{
+  float: left;
+  margin-left: 5%;
+}
+.right.top.landing, .left.top.landing{
+  width: 48%;
+  float: left;
+}
+.bills.body{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+}
+.bills ul{
+  list-style: none;
+}
+.bills.columnHeaders{
+  border: 1px black;
+  /* Add border, increase font-size and font-weight, center text and make bold. These are the words.  */
+}
+.bills span{
+  margin-left: 2%;
+}
+.body.bill{
+  width: 65%;
+  float: left;
+}
+/* bill: */
+/* Style fields database loads into, put inline with properties */
+remove list style
+add html & css for list of usernames
+
+
+
+/* style newbill input input and descriptions/headers */
+
+/* style bill ejs */
+/* style fields & inputs */
+/* remove list style */
+/* highlight bill name */

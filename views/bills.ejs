@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>All House Bills</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body class="bills body">
+    <h2>Welcome back, <!-- USER'S NAME HERE -->! Here are your bills: </h2>
+        <h3>All bills</h3>
+        <ul>
+          <li class="bills columnHeaders">
+            <span>Bill</span>
+            <span>Description</span>
+            <span>Amount left</span>
+          </li>
+          <% for(var i = 0; i < bills.length; i++) { %>
+          <li class="bills billsList"><a href="/bill?billId=<%= bills[i]._id %>">
+            <span><%= bills[i].name %> </span>
+            <span><%= bills[i].billDesc %></span>
+            <span>$<%= bills[i].amountLeft %></span>
+            <!--Use client-side javascript and bills[i].numPeople and bills[i].peoplePaid.length to calculate how many left to pay AND/OR another method to list actual users that haven't paid yet -->
+            <input type="button" id="payButton" name="payButton" value="Pay Bill">
+          </a></li>
+          <% } %>
+        </ul>
+        <a href="/newBill"><input type="button" id="newBill" name="payButton" value="New Bill"></a>
+        <script src="main.js"></script>
+        <!-- create username field in user collection and display username at top of bill page -->
+        <!-- Highlight bills viewing user hasn't paid yet -->
+        <!-- Show pay button for only bills user hasn't paid. -->
+        <!-- show prompt confirming make payment click -->
+        <!-- have newpayment form appear on bill page with click of button -->
+        <!-- show users not yet paid -->
+        <!-- Account for numbers with decimals & auto include currency symbol -->
+
+  </body>
+</html>

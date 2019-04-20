@@ -1,45 +1,54 @@
-var thumbUp = document.getElementsByClassName("fa-thumbs-up");
-var trash = document.getElementsByClassName("fa-trash");
+const payBill = document.querySelector('#payBill')
 
-Array.from(thumbUp).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const name = this.parentNode.parentNode.childNodes[1].innerText
-        const msg = this.parentNode.parentNode.childNodes[3].innerText
-        const thumbUp = parseFloat(this.parentNode.parentNode.childNodes[5].innerText)
-        fetch('messages', {
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            'name': name,
-            'msg': msg,
-            'thumbUp':thumbUp
-          })
-        })
-        .then(response => {
-          if (response.ok) return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          window.location.reload(true)
-        })
-      });
+payBill.addEventListener('click', function() {
+  console.log("clicky clicky")
+  const billId= document.querySelector('#billId').innerText;
+  const amountOriginal= document.querySelector('#amountOriginal').innerText;
+  const amountLeft= document.querySelector('#amountLeft').innerText
+  const numPeople= document.querySelector('#numPeople').innerText;
+  console.log(billId)
+  console.log(amountOriginal)
+  console.log(amountLeft)
+  console.log(numPeople)
+  fetch('makePayment', {
+    method: 'put',
+    headers: {'Content-Type': 'application/json'},
+    body: JSON.stringify({
+      'billId': billId,
+      'amountOriginal': amountOriginal,
+      'amountLeft': amountLeft,
+      'numPeople': numPeople
+    })
+  })
+  .then(response => {
+    if (response.ok) return response.json()
+  })
+  .then(data => {
+    console.log(data)
+    window.location.reload()
+  })
 });
 
-Array.from(trash).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const name = this.parentNode.parentNode.childNodes[1].innerText
-        const msg = this.parentNode.parentNode.childNodes[3].innerText
-        fetch('messages', {
-          method: 'delete',
-          headers: {
-            'Content-Type': 'application/json'
-          },
-          body: JSON.stringify({
-            'name': name,
-            'msg': msg
-          })
-        }).then(function (response) {
-          window.location.reload()
-        })
-      });
-});
+
+// addEventListener('click', function() {
+//   const billId= document.querySelector('#billId').innerText;
+//   const amountOriginal= document.querySelector('#').innerText;
+//   const numPeople= document.querySelector('#').innerText;
+//   fetch('payBill', {
+//           method: 'put',
+//           headers: {'Content-Type': 'application/json'},
+//           body: JSON.stringify({
+//             'billId': billId,
+//             'amountOriginal': amountOriginal,
+//             'numPeople': numPeople
+//           })
+//         })
+//         .then(response => {
+//           if (response.ok) return response.json()
+//         })
+//         .then(data => {
+//           console.log(data)
+//           window.location.reload(true)
+//         })
+//       });
+// })
