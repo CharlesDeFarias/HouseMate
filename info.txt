@@ -1,0 +1,64 @@
+There are 4 collections in my database:
+
+Bills, Transactions, House and User.
+
+Transactions:
+Transactions are individual payments that get contributed to a bill. Transactions are between a user and a bill only. Each bill has a caretaker that confirms if a payment actually happened and marks it as complete. Transactions can be partial and need to be able to take away from how much the user owes on their bills. Transactions will show up on the relevant bill page as well as in the user's private profile page where they'll see all their recent transactions and be able to click to open up the transaction.ejs page with more info.
+
+  Current properties:
+    -current date: date the transaction was created
+    -User: The logged in user making the transaction
+    -amount: the amount they're paying
+      Questionable:
+        -bills: Unsure if I should put an array of bill IDs here
+        -ID: Was thinking of having a unique ID system so I'm not stuck using the long number Ids mongo auto assigns. Figure it's worth it since people using this for budgeting may want  to be able to refer to the transaction by ID
+        -Caretaker: The caretaker is the one in charge of the bill and confirms that a payment happen and marks it accordingly. Unsure if this should be here or in bills.
+        -Status: paid, unconfirmed paid, unpaid
+
+Bills:
+The bill page shows information on particular bills. Each bill represents something that's due by a certain due date. So one month's rent is a bill, and the same rent bill the next month is another bill. Bills are tied to houses for now. Long term I'd like them to be able to be tied to individual users so users can make transactions between each other. For now, it's automatically just associated to all the people in a house. Bill.ejs page shows all the bill information as well as all transactions made so far on it and what users have not yet paid and who is the caretaker. The caretaker is the person assigned to managing the bill and confirming payments and marking the bill as paid/sent. Bills show up in the individual bills.ejs page as well as the main house portal which displays how much of the bill is unpaid, who the caretaker is and what users still haven't paid. The house page will also have a list of all its unpaid & recent bills. User's profile page and private page will show upcoming bills that they owe.
+
+  Current properties:
+  -Due date
+  -Date created
+  -total amount due
+    questionable:
+      -status: paid and unpaid? Unsure if this should exist at all or just go off the status from connected transactions to indicate when a bill is paid vs not.
+      -notes: I want users to be able to have public and private notes on every bill. Notes that serve as a description with notes for other users but also for the user to be able to keep their own private notes. I also want this to happen on every house page, every user profile page, every transaction page, so I'm really uncertain of how to handle it database-wise.
+      -documents: I want users to be able to upload documents like a photo or pdf or something that can, for example, show that a bill was paid or that there was some issue or communication or something. I would want users to be able to see all submitted relevant documents but only be able to delete the ones they themselves uploaded. I also want this to be true on individual transaction pages and the house page
+      -Transactions: each bill has to be linked to the transactions made to it, but unsure of how to do this. Maybe array of transaction Id's?
+      -id: Was thinking of having a unique ID system so I'm not stuck using the long number Ids mongo auto assigns. Figure it's worth it since people using this for budgeting
+
+House:
+All houses will get their own profile page that has information on the house. This page will be visible to all members of a house. Those that aren't in the house are taken to a house landing page that shows them the name of the house and the caretaker's name, with a button to request access to join the house. House information is used in pretty much just the house page directly. Depending on how things are linked, may have to be called in any pages where there are bills being called, for example.
+
+Current properties:
+  -address
+  -house name: Would get the option to name their house
+  -photo: would also be able to give it a photo
+  -Phone: optional property for a house number
+  -wifi -name -password
+  -landlord -name -contact
+
+    questionable:
+      -users: unsure if I should track users in the house or house in the users
+      -notes: I want users to be able to have public and private notes on every bill. Notes that serve as a description with notes for other users but also for the user to be able to keep their own private notes. I also want this to happen on every house page, every user profile page, every transaction page, so I'm really uncertain of how to handle it database-wise.
+      -documents: I want users to be able to upload documents like a photo or pdf or something that can, for example, show that a bill was paid or that there was some issue or communication or something. I would want users to be able to see all submitted relevant documents but only be able to delete the ones they themselves uploaded. I also want this to be true on individual transaction pages and the house page
+      -wifi- thinking of having an object as the value which has 2 properties, one for wifi name and one for wifi password. Eventually would want to be able to hash that wifi password.
+      -landlord - thinking of having an object as the value which has 2 properties, one for landlord name and one for landlord contact.
+
+users:
+
+current
+List of pages:
+bill.ejs
+newBill.ejs
+transaction.ejs
+newTrans.ejs
+house.ejs
+newHouse.ejs
+pubprofile.ejs
+editPubProfile.ejs
+profile.ejs
+main.ejs
+landing.ejs
