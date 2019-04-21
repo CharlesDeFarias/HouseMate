@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <!-- Do I need something before and after this title tag to plug in the house name? -->
+  <title><%= house[0].name %></title>
+</head>
+
+<body>
+  <h2>Welcome Home</h2>
+  <section class="house top container">
+    <section class="house top left photo">
+      <!-- Section with house shape & image -->
+      <!-- Find way to put house shape here  -->
+      <img src="" alt="house Image">
+    </section>
+
+    <section class="house top right info">
+      <!-- This is the section on the top right with the basic house information -->
+      <ul>
+        <!--I feel like this loop is wrong. It's going to be only one house, I don't need to account for multiple -->
+        <% for(var i = 0; i < house.length; i++) { %>
+        <li>
+          <span class="field">Address:</span>
+          <%= house[i].address %>
+          <span class="field">Phone:</span>
+          <%= house[i].phone %>
+          <span class="field">Landlord Name:</span>
+          <%= house[i].landlord.name %>
+          <span class="field">Landlord Contact:</span>
+          <%= house[i].landlord.contact %>
+          <span class="field">Wifi Name:</span>
+          <%= house[i].wifi.name %>
+          <span class="field">Wifi Password:</span>
+          <%= house[i].wifi.name %>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+    <section class="house bottom left housemates">
+      <!-- This is the section on the bottom left that shows the housemates list. -->
+      <ul>
+        <!--I feel like this loop is wrong. It's going to be only one house, I don't need to account for multiple -->
+        <% for(var j = 0; j < house.users.length; j++) { %>
+        <li>
+          <img src="<%= house[0].img %> " alt="">
+          <span class="field">Name:</span>
+          <%= house[0].users[j].name %>
+        </li>
+        <% } %>
+      </ul>
+    </section>
+
+    <section class="house bottom right bills">
+      <!-- This is the section where I'll be putting all bills associated with the house -->
+      <ul>
+        <% for(var i = 0; i < bills.length; i++) { %>
+        <li>
+          <a href="LINK TO INDIVIDUAL BILL PAGE HERE. RENDER BILL.EJS">
+            <span>
+              <%= bills[i].name %></span>
+            <span>
+              <%= bills[i].dueDate %></span>
+            <span>
+              <%= bills[i].amount %></span>
+              <!-- <span> -->
+              <!-- <span class="amountLeft">use javascript to calculate how much is left on the bill</span></span> -->
+              <!-- <span> -->
+              <!-- <span class="daysLeft">use javascript to calculate how many days left until due</span></span> -->
+            <span>
+              <!--Display the caretaker's profile photo and name here-->
+              <%= bills[i].careTaker %></span>
+            <!--Icon here for paying bill directly  -->
+            </li>
+        </a>
+        <% } %>
+      </ul>
+    </section>
+
+  </section>
+
+  <section class="house middle docs">
+    <!-- middle section with documents -->
+    <ul>
+      <% for(var k = 0; k < house.length; k++) { %>
+      <li>
+        <span><%= documents[k].name %></span>
+        <span><%= documents[k].fileSize %></span>
+        <span><%= documents[k].name %></span>
+        <button type="button" name="button">Add</button>
+        <button type="button" name="button">Delete</button>
+      </li>
+      <% } %>
+    </ul>
+  </section>
+
+  <section class="house bottom notes">
+    <!-- middle section with documents -->
+    <ul class="house public notes">
+      <% for(var m = 0; m < notes.length; m++) { %>
+      <li>
+        <span><%= notes[m].name %></span>
+        <span><%= notes[m].note %></span>
+        <button type="button" name="button">Delete</button>
+        <!-- Make possible to delete own notes -->
+      </li>
+      <% } %>
+    </ul>
+
+    <ul class="house private notes">
+      <% for(var b = 0; b < notes.length; b++) { %>
+      <li>
+        <span><%= notes[b].name %></span>
+        <span><%= notes[b].note %></span>
+        <button type="button" name="button">Delete</button>
+        <!-- Make possible to delete own notes -->
+      </li>
+      <% } %>
+    </ul>
+  </section>
+</body>
+
+</html>

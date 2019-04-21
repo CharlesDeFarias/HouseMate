@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <!-- have two forms, one for creating a house and one for joining -->
+    <!-- form here with address, name and wifi info -->
+    <section>
+    <form class="" action="/createHouse" method="post">
+        <input type="text" name="houseName" value="" placeholder="name">
+        <input type="text" name="address" value="" placeholder="address">
+        <input type="text" name="wifiName" value="" placeholder="wifName">
+        <input type="text" name="wifiPass" value="" placeholder="wifiPass">
+        <input type="submit" id="newHouseBtn" name="" value="CREATE YO HOUSE">
+    </form>
+    //create a .post route that takes the information from the above form and saves it to the database
+    </section>
+
+    <section>
+      <form class="" action="/joinHouse" method="post">
+        <input type="text" name="houseId" value="" placeholder="Paste special house ID here">
+        <input type="submit" id="joinHouseBtn" name="" value="Join this house">
+      </form>
+    </section>
+  </body>
+</html>
