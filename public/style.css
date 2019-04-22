@@ -1,18 +1,51 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  /* text-align: center; */
+}
+body{
+  background-color: #ededed;
+}
 .landing.body{
   padding-top:80px;
   word-wrap:break-word;
   width: 75%;
   margin: auto;
+  background-image: url('landingBG.png');
+  background-size: cover;
+}
+.landing header{
+  display: flex;
+  justify-content: center;
+  width: 50%;
+  margin: 0 auto;
 }
 .landing img{
-  height: 200px;
+  height: 150px;
 }
 .landing.form{
   width: 48%;
+
   float: left;
+}
+.landing{
+    margin-left: 4%;
+}
+.landing form{
+
+}
+.landing.logIn{
+  margin: 117px;
+
 }
 .landing h1{
   width: 100%;
+}
+.landing h2{
+  margin-top: 165px;
+}
+.landing p{
+  margin: 0 0 156px 0;
 }
 .landing ul{
   list-style: none;
@@ -21,13 +54,15 @@
   float: left;
   margin-left: 5%;
 }
-.right.top.landing, .left.top.landing{
-  width: 48%;
+.left.top.landing, .right.top.landing{
+  width: 45%;
+  height: 440px;
   float: left;
+
 }
 .bills.body{
   width: 80%;
-  margin: auto;
+  margin: 80px auto;
   text-align: center;
 }
 .bills ul{
@@ -44,16 +79,3 @@
   width: 65%;
   float: left;
 }
-/* bill: */
-/* Style fields database loads into, put inline with properties */
-remove list style
-add html & css for list of usernames
-
-
-
-/* style newbill input input and descriptions/headers */
-
-/* style bill ejs */
-/* style fields & inputs */
-/* remove list style */
-/* highlight bill name */
