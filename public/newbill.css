@@ -1,0 +1,21 @@
+*{
+  margin: 0;
+  box-sizing: border-box;
+  font-family: helvetica;
+}
+a{
+  text-decoration: none;
+  color: #1b0538;
+  font-weight: bold;
+}
+body{
+  background-color: #f9f4ff;
+}
+.wrapper{
+  width: 75%;
+  margin: auto;
+  margin-top: 3em;
+}
+form{
+  margin-left: 25%;
+}

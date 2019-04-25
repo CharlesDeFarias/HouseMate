@@ -2,34 +2,66 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <title><%= bill[0].name.toUpperCase() %> BILL PAGE</title>
+  <title><%= bill[0].name %> BILL PAGE</title>
   <link rel="stylesheet" href="typography.css">
   <link rel="stylesheet" href="indBill.css">
 </head>
 <body class="body bill full-layout">
 <!-- Bill information -->
     <section class="bill amount">
-      <h1><%= bill[0].name.toUpperCase() %> BILL PAGE</h1>
-      <h5 class="bill property">Id:</h5>
-      <p class = "bill value" id="billId"><%= bill[0]._id %></p>
-      <h5 class="bill property">Amount Left:</h5>
-      <p class = "bill value" id="amountLeft"><%= bill[0].amountLeft %></p>
-      <h5 class="bill property">Original Amount:</h5>
-      <p class = "bill value" id="amountOriginal"><%= bill[0].amountOriginal %></p>
-      <h5 class="bill property">Number of people on bill:</h5>
-      <p class = "bill value" id="numPeople"><%= bill[0].numPeople %></p>
-      <input type="button" id="payBill" name="payBill" value="Pay Now">
-      
+      <h2><%= bill[0].name %> Bill page</h2>
+      <table>
+        <thead>
+          <tr>
+            <td colspan="2">
+              <h6>Bill's Information</h6>
+            </td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID</td>
+            <td><p class="bill id" id="billId"><%= bill[0]._id %></p></td>
+          </tr>
+          <tr>
+            <td>Original Amount</td>
+            <td><p class="bill value" id="amountOriginal"><%= bill[0].amountOriginal %></p></td>
+          </tr>
+          <tr>
+            <td>Amount Left</td>
+            <td>$<p class="bill value" id="amountLeft"><%= bill[0].amountLeft %></td>
+          </tr>
+          <tr>
+            <td>Due Date</td>
+            <td><p class="bill value" id="dueDate"><%= bill[0].dueDate %></td>
+          </tr>
+          <tr>
+            <td>Number of people on bill</td>
+            <td><p class="bill value" id="numPeople"><%= bill[0].numPeople %></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
     <section class="bill paid">
-      <h3>Payments Made</h3>
-      <ul>
-        <% for(var i = 0; i < bill[0].peoplePaid.length; i++) { %>
-        <li>
-            <span><%= bill[0].peoplePaid[i] %> </span>
-          </li>
+      <h2>Payments Recorded</h3>
+      <table>
+        <thead>
+          <tr>
+            <td><h6>HOUSEMATE'S EMAIL</h6></td>
+          </tr>
+        <tbody>
+        </thead>
+          <% for(var i = 0; i < bill[0].peoplePaid.length; i++) { %>
+          <tr id="payment-<%= i %>">
+            <td>
+              <p class="payment amount"><%= bill[0].peoplePaid[i] %></p>
+            </td>
+          </tr>
           <% }%>
-        </ul>
-      </section>
+        </tbody>
+      </table>
+
       <!-- Use userlist and people paid to generate list of people that haven't paid yet? -->
       <!-- <section class="bill unpaid">
         <h3>Housemates that have not paid</h3>
@@ -42,12 +74,11 @@
           </ul>
         </section> -->
 
-        <section>
-        <input type="button" id="payBill" name="payBill" value="Pay Now">
+
+        <input type="button" id="payBill" name="payBill" value="Pay Now" class="btn submit" />
           <!-- <form class="" action="index.html" method="post">
           Give user option to add in description, document/file and custom amount
         </form> -->
-      </section>
     </section>
     <!-- have javascript promp appear on clicking pay to click again and confirm payment or decline. -->
     <!-- Show users not paid -->

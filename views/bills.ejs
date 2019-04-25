@@ -39,7 +39,7 @@
           </p>
           <% if(!bills[i].peoplePaid.includes(user.local.email)){ %>
           <p>
-            <%= Math.floor((bills[i].amountLeft/bills[i].numPeople)) %>
+            $<%= Math.floor((bills[i].amountLeft/bills[i].numPeople)) %>
           </p>
           <% }else if(bills[i].peoplePaid.includes(user.local.email)){ %>
           <p>

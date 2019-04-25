@@ -1,0 +1,48 @@
+*{
+  box-sizing: border-box;
+}
+.half-layout{
+  align-items: center;
+  justify-content: center;
+  width: 48%;
+  height: 40vh;
+  float: left;
+  margin: 0;
+  padding: 1rem;
+  text-align: center;
+}
+.half-layout:first-of-type{
+  border-right: 2px solid black;
+}
+form{
+max-width: 400px;
+width: 100%;
+}
+form fieldset{
+  outline: 0;
+  border: 0;
+  margin: 1rem auto;
+  width: 100%;
+  padding: 0;
+}
+form fieldset input{
+  padding: 0.3rem 1rem;
+  width: 100%;
+}
+form fieldset label{
+  display: block;
+}
+.accountDetails{
+  float: left;
+  width: 100%;
+}
+.detailsForm{
+  width: 100%;
+  float: left;
+}
+.signupBtn{
+  clear:both;
+  float:  left;
+  margin-top: 4px;
+  margin-left: 596px;
+}
