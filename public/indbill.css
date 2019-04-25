@@ -1,0 +1,16 @@
+*{
+  box-sizing: border-box;
+}
+.full-layout{
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 20px auto 20px auto;
+  text-align: center;
+}
+.body.bill{
+
+}
+li{
+  list-style: none;
+}

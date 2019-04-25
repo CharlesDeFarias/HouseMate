@@ -8,8 +8,7 @@ var userSchema = mongoose.Schema({
   local            : {
     email        : String,
     password     : String,
-    house        : String,
-    photo        : String
+    house        : String
     // name         : String,
     // paypal       : String,
     // cashapp      : String,

@@ -1,68 +1,77 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
   <meta charset="utf-8">
-  <title>All House Bills</title>
+  <title>All Bills</title>
+  <link rel="stylesheet" href="typography.css">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <section class="bills body">
-    <h2>All active bills </h2>
+    <section class="fixed userDebt">
+      <section>
+        <h3>Total you owe</h3>
+        <p id="uAmount">$1,000</p>
+      </section>
+      <!-- CHANGE THIS FROM HARDCODED -->
+      <a href="/newBill"><input type="button" id="newBill" name="payButton" value="Create New Bill"></a>
+    </section>
     <section>
+      <h2>ALL BILLS</h2>
       <ul>
         <li class="bills columnHeaders">
-          <span>Bill</span>
-          <span>Description</span>
-          <span>Amount left</span>
+          <span>Name</span>
+          <span>$$ due</span>
+          <span>Due on</span>
+          <span>$$ You owe</span>
         </li>
-        <% for(var i = 0; i < bills.length; i++) { %>
-          <li class='<%= bills[i].amountLeft>0?"unpaidBillList":"paidBillList" %> bills billsList'><a href="/bill?billId=<%= bills[i]._id %>">
-          <span><%= bills[i].name %> </span>
-          <span><%= bills[i].billDesc %></span>
-          <span>$<%= bills[i].amountLeft %></span>
-          </a><% if(bills[i].amountLeft>0){%>
-            <input type="button" id="payButton" name="payButton" value="Pay Bill">
-            <% }else{ %>
-              YA PAAAID
-              <% } %>
-              </li>
-              <% } %>
-            </ul>
-          </section>
-
-          <!-- section that displays most recent paid bills %>
-          <section>
-          <ul>
-          <li class="bills columnHeaders">
-          <span>Bill</span>
-          <span>Description</span>
-          <span>Amount left</span>
+        <% for(let i=0;i<bills.length;i++){ %>
+        <li class='<%= bills[i].amountLeft>0?"unpaidBillList":"paidBillList" %> bills genLi'>
+          <p>
+            <%= bills[i].name %>
+          </p>
+          <p>
+            $<%= bills[i].amountLeft %>
+          </p>
+          <p>
+            Thursday, 4/25
+          </p>
+          <% if(!bills[i].peoplePaid.includes(user.local.email)){ %>
+          <p>
+            <%= Math.floor((bills[i].amountLeft/bills[i].numPeople)) %>
+          </p>
+          <% }else if(bills[i].peoplePaid.includes(user.local.email)){ %>
+          <p>
+            0
+          </p>
+          <% } %>
+          <a href="#"><input type="button" name="payButton" value="Pay Bill"></a>
+          <a href="/bill?billId=<%= bills[i]._id %>"><input type="button" name="viewBill" value="View Bill"></a>
         </li>
-        <% for(var i = 0; i < bills.length; i++) { %>
-        <li class='<%= bills[i].amountLeft>0?"unpaidBillList":"paidBillList" %> bills billsList'><a href="/bill?billId=<%= bills[i]._id %>">
-        <span><%= bills[i].name %> </span>
-        <span><%= bills[i].billDesc %></span>
-        <span>$<%= bills[i].amountLeft %></span>
-      </a><% if(bills[i].amountLeft>0){%>
-      <input type="button" id="payButton" name="payButton" value="Pay Bill">
-      <% }else{ %>
-      YA PAAAID
-      <% } %>
-    </li>
-    <% } %>
-  </ul>
-</section>
+        <!-- <a href="/bill?billId=<%= bills[i]._id %>">
+        <% if(!bills[i].peoplePaid.includes(user.local.email)){ %>
+        YOU HAVE NOT PAID
+        <% }else if(bills[i].peoplePaid.includes(user.local.email)){ %>
+        YOU HAVE PAID
+        <% } %>
+      </a> -->
+        <% } %>
+      </ul>
 
-<a href="/newBill"><input type="button" id="newBill" name="payButton" value="New Bill"></a>
-<script src="main.js"></script>-->
+    </section>
 
-<!-- create username field in user collection and display username at top of bill page -->
-<!-- Highlight bills viewing user hasn't paid yet -->
-<!-- Show pay button for only bills user hasn't paid. -->
-<!-- show prompt confirming make payment click -->
-<!-- have newpayment form appear on bill page with click of button -->
-<!-- show users not yet paid -->
-<!-- Account for numbers with decimals & auto include currency symbol -->
-</section>
+    <script src="main.js"></script>
+
+    <!-- create username field in user collection and display username at top of bill page -->
+    <!-- Highlight bills viewing user hasn't paid yet -->
+    <!-- Show pay button for only bills user hasn't paid. -->
+    <!-- show prompt confirming make payment click -->
+    <!-- have newpayment form appear on bill page with click of button -->
+    <!-- show users not yet paid -->
+    <!-- Account for numbers with decimals & auto include currency symbol -->
+
+  </section>
 </body>
+
 </html>

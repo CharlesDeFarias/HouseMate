@@ -1,0 +1,17 @@
+button{
+  cursor: pointer;
+}
+button.submit{
+  padding: 0.4rem 1.6rem;
+  margin: 0.4rem 0;
+  outline: 0;
+  border: 1px solid #3426a4;
+  background: transparent;
+  color: #3426a4;
+  font-size: 1.1rem;
+  text-transform: capitalize;
+}
+button.submit:hover{
+  background-color: #3426a4;
+  color: white;
+}

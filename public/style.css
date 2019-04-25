@@ -1,81 +1,107 @@
 *{
   margin: 0;
   box-sizing: border-box;
-  /* text-align: center; */
+  font-family: helvetica;
+}
+a{
+  text-decoration: none;
+  color: #1b0538;
+  font-weight: bold;
 }
 body{
-  background-color: #ededed;
+  background-color: #f9f4ff;
 }
-.landing.body{
-  padding-top:80px;
-  word-wrap:break-word;
-  width: 75%;
-  margin: auto;
-  background-image: url('landingBG.png');
-  background-size: cover;
+.billsBtns:hover{
+ box-shadow: 0 7px 14px rgba(27, 5, 56,0.25), 0 6px 6px rgba(27, 5, 56,0.22);
 }
-.landing header{
-  display: flex;
-  justify-content: center;
-  width: 50%;
-  margin: 0 auto;
-}
-.landing img{
-  height: 150px;
-}
-.landing.form{
-  width: 48%;
-
-  float: left;
-}
-.landing{
-    margin-left: 4%;
-}
-.landing form{
-
-}
-.landing.logIn{
-  margin: 117px;
-
-}
-.landing h1{
+.fixed.userDebt{
+  background-color: #1b0538;
+  color: white;
+  font-size: 30px;
+  padding-left: 10px;
+  position: sticky;
+  top: 0px;
   width: 100%;
 }
-.landing h2{
-  margin-top: 165px;
+.fixed.userDebt p{
+  margin: 0;
+  padding: 0;
+  background-color: #1b0538;
 }
-.landing p{
-  margin: 0 0 156px 0;
-}
-.landing ul{
-  list-style: none;
-}
-.landing nav li{
-  float: left;
-  margin-left: 5%;
-}
-.left.top.landing, .right.top.landing{
-  width: 45%;
-  height: 440px;
-  float: left;
-
+.fixed.userDebt h3{
+  margin-bottom: 0;
 }
 .bills.body{
   width: 80%;
-  margin: 80px auto;
+  margin: 20px auto 20px auto;
   text-align: center;
 }
 .bills ul{
   list-style: none;
+  border-radius: 5px;
+  padding: 0px;
+}
+.bills p{
+  padding: 10px 0;
+  font-weight: 200;
 }
 .bills.columnHeaders{
-  border: 1px black;
-  /* Add border, increase font-size and font-weight, center text and make bold. These are the words.  */
+  font-size: 1em;
+  font-weight: 200;
+}
+a input{
+  display: block
+  width: 100%;
+  margin: 0;
 }
 .bills span{
   margin-left: 2%;
 }
-.body.bill{
-  width: 65%;
-  float: left;
+.genLi {
+  background-color: grey;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  margin: auto;
+  margin-top: .5em;
+}
+.temp{
+  border-radius: 5px;
+  margin-top: 30px;
+}
+#newBill{
+  margin: 10px;
+  padding: 5px 10px;
+  font-size: 1em;
+  background-color: #1b0538;
+  border-radius: 5px;
+  color:white;
+}
+.genLi, .columnHeaders{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  width: 100%;
+  margin: auto;
+}
+.genLi {
+  background-color: grey;
+  background-color: #EEEEEE;
+  color: #333333;
+  padding: 2px 6px 2px 6px;
+  border-top: 1px solid #CCCCCC;
+  border-right: 1px solid #333333;
+  border-bottom: 1px solid #333333;
+  border-left: 1px solid #CCCCCC;
+  margin: auto;
+  margin-top: .5em;
+}
+.value{
+  width: 50%;
+}
+.bill.property{
+  width: 50%;
 }
